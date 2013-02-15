@@ -39,6 +39,8 @@ email.error
 
 You can skip the host, client and key parameters and specify the `ENV['CED_HOST']`, `ENV['CED_CLIENT']` and `ENV['CED_KEY']` environment variable for convenience.
 
+**WARNING** Don't blindly trust `email.valid?` as it will also return `false` when the request failed. Always check for `email.verified?` before inspecting the other attributes!
+
 ## Contributing
 
 Something missing? Found a bug? Horrified by the code? Open a [github issue](https://github.com/cimm/ced/issues), write a failing test or add some code using pull requests. Your help is greatly appreciated!

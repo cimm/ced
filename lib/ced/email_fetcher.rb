@@ -30,7 +30,6 @@ module CED
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE # Host certificate does not cover the subdomain
       request          = Net::HTTP::Get.new(uri.request_uri)
       response         = http.request(request)
-      puts response.body
       EmailResponse.new(response)
     end
 

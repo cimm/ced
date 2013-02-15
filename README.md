@@ -21,13 +21,13 @@ Or install it yourself as:
 Minimum workable example:
 
 ```ruby
-require "CED"
+require "ced"
  => true
 email = CED::Email.new("john@example.con", "ced.example.com", "client", "key")
  => #<CED::Email:0x007ffd4198c358 @address="john@example.con", @client="client", @key="key">
 email.verified?
  => true
-email.email
+email.corrected_email
  => "john@example.com"
 email.valid?
  => false
@@ -38,8 +38,6 @@ email.error
 ```
 
 You can skip the host, client and key parameters and specify the `ENV['CED_HOST']`, `ENV['CED_CLIENT']` and `ENV['CED_KEY']` environment variable for convenience.
-
-Notice the corrected email address in the example response.
 
 ## Contributing
 

@@ -15,8 +15,8 @@ module CED
       raw_email.keys.any?
     end
 
-    def email
-      raw_email["email"]
+    def corrected_email
+      raw_email["email"] || ""
     end
 
     def valid?

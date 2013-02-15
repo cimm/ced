@@ -1,0 +1,6 @@
+{
+  "email": "john.doe@example.com",
+  "valid": false,
+  "db": true,
+  "error": "Invalid domain name"
+}

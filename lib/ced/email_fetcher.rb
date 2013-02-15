@@ -8,6 +8,9 @@ module CED
     EMAIL_PATH = "/api/v1/Email/validate"
 
     def initialize(host, client, key)
+      raise ArgumentError, "Missing CED host"   if host.nil?   || host.strip.empty?
+      raise ArgumentError, "Missing CED client" if client.nil? || client.strip.empty?
+      raise ArgumentError, "Missing CED key"    if key.nil?    || key.strip.empty?
       @host   = host
       @client = client
       @key    = key

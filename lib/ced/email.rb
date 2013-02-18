@@ -31,6 +31,10 @@ module CED
       raw_email["error"] || ""
     end
 
+    def error_code
+      error.downcase.gsub(/[^a-z0-9\-_]+/, "_")
+    end
+
     private
 
     def raw_email

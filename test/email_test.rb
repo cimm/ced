@@ -240,5 +240,38 @@ module CED
         end
       end
     end
+
+    describe :error_code do
+      describe "when the response was successful" do
+        describe "when the address is valid" do
+          it "has no error" do
+            email = Email.new(ADDRESS, HOST, CLIENT, KEY)
+            email.error_code.must_equal("")
+          end
+        end
+
+        describe "when the address is not valid" do
+          before do
+            stub_email_verification_request(invalid_email_body)
+          end
+
+          it "has a more detailed error" do
+            email = Email.new(ADDRESS, HOST, CLIENT, KEY)
+            email.error_code.must_equal("invalid_domain_name")
+          end
+        end
+      end
+
+      describe "when the response was not successful" do
+        before do
+          stub_error_email_verification_request(500)
+        end
+
+        it "returns an empty string" do
+          email = Email.new(ADDRESS, HOST, CLIENT, KEY)
+          email.error_code.must_equal("")
+        end
+      end
+    end
   end
 end

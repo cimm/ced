@@ -35,6 +35,8 @@ email.seen_before?
  => true
 email.error
  => "Invalid domain name"
+email.error_code
+ => "invalid_domain_name"
 ```
 
 You can skip the host, client and key parameters and specify the `ENV['CED_HOST']`, `ENV['CED_CLIENT']` and `ENV['CED_KEY']` environment variable for convenience.

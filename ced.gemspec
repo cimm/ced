@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Ruby interface for CED's email verification service.}
   gem.summary       = %q{The Central Email Database is an email verification service. You pass it an email address and it tells you if the email address is real or not. This gem wraps the API in a more Ruby friendly syntax. CED also corrects common typos in email domains.}
   gem.homepage      = "https://github.com/cimm/ced"
-  spec.license      = "MIT"
+  gem.license      = "MIT"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
